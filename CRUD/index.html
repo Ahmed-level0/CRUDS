@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container  p-5">
+        <h1 class="text-white">Product <span class="text-warning">Management</span> System</h1>
+        
+        <label for="productName"class="text-white py-2">Product Name</label>
+        <input type="text" id="productName" class="form-control" placeholder="Enter Product Name" oninput="validName()">
+        <p class="text-danger d-none" id="invalidname">Please enter Name with 4 capital characters</p>
+        
+        <label for="ProductPrice"class="text-white py-2">Product Price</label>
+        <input type="number" id="ProductPrice" class="form-control" placeholder="Enter Product Price">
+        
+        <label for="ProductCategory"class="text-white py-2">Product Category</label>
+        <input type="text" id="ProductCategory" class="form-control" placeholder="Enter Product Category">
+        
+        <label for="ProductDescription"class="text-white py-2">Product Description</label>
+        <input type="text" id="ProductDescription" class="form-control" placeholder="Enter Product Description">
+        
+        <button class="btn btn-primary my-4" onclick="addProduct()">ADD PRODUCT</button>
+        <button class="btn btn-success my-4 d-none" onclick="saveUpdates()" id="savebtn">SAVE UPDATES</button>
+        
+        <input type="text" id="Search" class="form-control" oninput="search(this.value)" placeholder="Search With Product Name">
+        
+        <table class="text-white table table-dark text-center my-5" id="table">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Category</th>
+                    <th>Product Description</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>    
+            </thead>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
